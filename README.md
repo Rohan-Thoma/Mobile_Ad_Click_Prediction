@@ -1,11 +1,12 @@
 # Mobile Ad Click Prediction
-Detecting whether a mobile ad will be clicked or not in the age of information overflow, fast changing trends and short spanned attention.
+Predicting whether a mobile ad will be clicked or not in the age of information overflow, fast changing trends and short spanned attention.
 
 ## What are mobile ads and why we need to care about them ?
-A mobile ad is a type of ad that can appear on web pages and apps that are viewed on a mobile device like a cell phone or tablet. For Google Ads, “mobile” is defined as where the ad can appear on “mobile” devices. These include high-end mobile devices with smaller screens, such as smartphones. A decade ago, when smartphones were almost a cutting-edge idea, nobody would have expected that in just a few years, these devices will become indispensable to us. Almost half of the online traffic comes from mobile devices. The mobile digital advertising set to grow from $162.6 in 2018 to $384.9 billion, worldwide, by 2023 according to eMarketer research. So, we can say that mobile is the future of digital advertising. Therefore, any marketing or advertising campaign should also focus on them. 
+A mobile ad is a type of ad that can appear on web pages and apps that are viewed on a mobile device like a cell phone or tablet. For Google Ads, “mobile ad” is defined as where the ad can appear on “mobile” devices. These include high-end mobile devices with smaller screens, such as smartphones. A decade ago, when smartphones were almost a cutting-edge idea, nobody would have expected that in just a few years, these devices will become indispensable to us. Almost half of the online traffic comes from mobile devices. The mobile digital advertising set to grow from $162.6 in 2018 to $384.9 billion, worldwide, by 2023 according to eMarketer research. 
+> <b><i>So, we can say that mobile is the future of digital advertising. Therefore, any marketing or advertising campaign should also focus on them. </i></b>
 
 ## Business Objectives and constraints
-<b> Objective </b> :  Predict the pClick (probability of click) as accurately as possible. <br>
+<b> Objective </b> :  Predict the pClick (probability of click) for a given ad as accurately as possible. <br>
 
 <b> What is CTR (Click Through Rate) ? </b>
   * Clickthrough rate (CTR) is a ratio showing how often people who see your ad end up clicking it. Clickthrough rate (CTR) can be used to gauge how well your keywords and ads are performing. CTR is the number of clicks that your ad receives divided by the
@@ -118,12 +119,12 @@ The data is given in the form of a CSV file
 * It is a <b> binary classification </b> problem where given an Ad and its related information, we need to predict whether it would be clicked or not, for that we will predict the probability of click and set a suitable threshold which works best with our data and then if the probability is above the threshold, then we will predict that it would be clicked or vice versa.
 
 ### Performance metric
-* Binary Log-loss : The metric to measure the performance of the model is chosen to be log-loss because it penalizes the model for every wrong prediction and also it uses the probability values directly to estimate the value.
-* Confusion matrix along with precision and recall matrices :  With the help of these matrics, we get an idea of how the model is performing for classes 1 and 0 since the ad click prediction data is always an imbalanced data.
+* <b><i>Binary Log-loss</i></b> : The metric to measure the performance of the model is chosen to be log-loss because it penalizes the model for every wrong prediction and also it uses the probability values directly to estimate the value.
+* <b><i>Confusion matrix along with precision and recall matrices </i></b>:  With the help of these matrics, we get an idea of how the model is performing for classes 1 and 0 since the ad click prediction data is always an imbalanced data.
 
 ### Machine Learning Objectives and constraints
-* Objective : Reduce the log-loss as low as possible 
-* Constraints : As low latency is the main priority , the models should be chosen in such a manner that they are light weight and also powerful so that they are fast during the deployment and give accurate results.
+ * <b><i>Objective</i></b> : Reduce the log-loss as low as possible 
+ * <b><i>Constraints</i></b> : As low latency is the main priority , the models should be chosen in such a manner that they are light weight and also powerful so that they are fast during the deployment and give accurate results.
 
 ## Notebooks Overview
 ### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> Mobile_Ad_Pred_EDA.ipynb </a> :
@@ -143,7 +144,7 @@ The data is given in the form of a CSV file
 * This notebook consists of the results and insights after trying out various machine learning models
 * As we have huge dataset of 50 million data points, 5 million datapoints are picked by selecting the data points in a uniform ramdom fashion spanning the entire dataset. This is done due to the resource contraints that so not support the processing of all the 50 million data points.
 * As all the features are categorical in nature, so it makes sense to label encode them , so as we have already computed the CTR per categorical value for each feature, those values can be taken as a better proxy instead of label encoding them manually and with this method we get only 1 numerical feature column corresponding to each feature which also keeps the dimensionality from increasing if we would opt for traditional encoding schemes such as one-hot encoding especially when the features are having very high number of unique categorical values such as this dataset.
-> Here we have got a test log-loss of <b><i> 0.39065</i></b> which is a very good loss which is equivalent to score of the <b><i>160 to 170th</i></b> position in the public leaderboard of the kaggle.
+> Here the test log-loss of <b><i> 0.39065</i></b> is obtained which is a very good loss which is equivalent to score of the <b><i>160 to 170th</i></b> position in the public leaderboard of the kaggle.
 * The actual dataset given by the kaggle is of 50 million datapoints but we have taken a 5 million data points and trained our model due to the resource constraints and the test data given the kaggle itself is close to 5 million data points , so we cannot predict on this dataset using the current model because there will be a lot of unseen data points for which will not be able to predict correctly.
 * By using this current model on the kaggle test data, it has generated a score of log-loss = 0.41 which is not bad for a model that is trained on just 5 million data points when the actual dataset is very large , this means that we have trained on the 10% of the given data.
 * If we could train the model on whole 50 million data points , then the score would be much better but keeping in mind the real world application of the solution , the reduction in log-loss would contribute very little value in the business standpoint as we have not been able to see any considerable improvements in the values of the confusion matrix.
