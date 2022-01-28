@@ -1,7 +1,7 @@
 # Mobile Ad Click Prediction
 Predicting whether a mobile ad will be clicked or not in the age of information overflow, fast changing trends and short spanned attention.
 
-# Detailed Blog explaining the whole case study is here:
+## Detailed Blog explaining the whole case study is here:
 * part-1: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-1-3971c60da991
 * part-2: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-2-325307d2e65a
 
