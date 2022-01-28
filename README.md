@@ -1,6 +1,10 @@
 # Mobile Ad Click Prediction
 Predicting whether a mobile ad will be clicked or not in the age of information overflow, fast changing trends and short spanned attention.
 
+# Detailed Blog explaining the whole case study is here:
+* part-1: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-1-3971c60da991
+* part-2: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-2-325307d2e65a
+
 ## What are mobile ads and why we need to care about them ?
 A mobile ad is a type of ad that can appear on web pages and apps that are viewed on a mobile device like a cell phone or tablet. For Google Ads, “mobile ad” is defined as where the ad can appear on “mobile” devices. These include high-end mobile devices with smaller screens, such as smartphones. A decade ago, when smartphones were almost a cutting-edge idea, nobody would have expected that in just a few years, these devices will become indispensable to us. Almost half of the online traffic comes from mobile devices. The mobile digital advertising set to grow from $162.6 in 2018 to $384.9 billion, worldwide, by 2023 according to eMarketer research. 
 > <b><i>So, we can say that mobile is the future of digital advertising. Therefore, any marketing or advertising campaign should also focus on them. </i></b>
