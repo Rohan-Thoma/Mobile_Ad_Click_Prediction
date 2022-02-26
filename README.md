@@ -146,7 +146,7 @@ The data is given in the form of a CSV file
 
 ### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_modelling.ipynb"> Mobile_Ad_Pred_modelling.ipynb </a> :
 * This notebook consists of the results and insights after trying out various machine learning models
-* As we have huge dataset of 50 million data points, 5 million datapoints are picked by selecting the data points in a uniform ramdom fashion spanning the entire dataset. This is done due to the resource contraints that so not support the processing of all the 50 million data points.
+* As we have huge dataset of 50 million data points, 5 million datapoints are picked by selecting the data points in a uniform random fashion spanning the entire dataset. This is done due to the resource contraints that so not support the processing of all the 50 million data points.
 * As all the features are categorical in nature, so it makes sense to label encode them , so as we have already computed the CTR per categorical value for each feature, those values can be taken as a better proxy instead of label encoding them manually and with this method we get only 1 numerical feature column corresponding to each feature which also keeps the dimensionality from increasing if we would opt for traditional encoding schemes such as one-hot encoding especially when the features are having very high number of unique categorical values such as this dataset.
 > Here the test log-loss of <b><i> 0.39065</i></b> is obtained which is a very good loss which is equivalent to score of the <b><i>160 to 170th</i></b> position in the public leaderboard of the kaggle.
 * The actual dataset given by the kaggle is of 50 million datapoints but we have taken a 5 million data points and trained our model due to the resource constraints and the test data given the kaggle itself is close to 5 million data points , so we cannot predict on this dataset using the current model because there will be a lot of unseen data points for which will not be able to predict correctly.
@@ -157,43 +157,73 @@ The data is given in the form of a CSV file
 ### Scores from the various machine learning models are given below:
 <table style="width:100%">
   <tr>
+    <th>S.No</th>
     <th>Model</th>
-    <th>Features</th>
-   <th>Test Log-loss</th>
+    <th>Type of data</th>
+   <th>Number of classes</th>
+   <th>Test Accuracy</th>
   </tr>
   <tr>
-    <td>Random model</td>
-    <td>original features + 5 engineered features</td>
-   <td>0.88575</td>
+   <td>1</td>
+    <td>Baseline model</td>
+    <td>on 1 million images </td>
+   <td>5070 of class level 3</td>
+   <td>44.82 %</td>
     </tr>
   <tr>
-    <td>Logistic regression with hyper-parameter tuning</td>
-    <td>original features + 5 engineered features</td>
-   <td>0.40037</td>
+   <td>2</td>
+   <td>Baseline model with class weights</td>
+   <td>on 1 million images </td>
+   <td>5070 of class level 3</td>
+    <td>0 %</td>
   </tr>
   <tr>
-    <td>XG_Boost with hyper-parameter tuning</td>
-    <td>original features + 5 engineered features</td>
-   <td>0.39457</td>
+   <td>3</td>
+    <td>Resnet50 with fine tuning of last layers</td>
+    <td>on 1 million images</td>
+   <td>5070 of class level 3</td>
+   <td>26.02 %</td>
   </tr>
   <tr>
-    <td>Field Oriented Factorization Machines with hyper-parameter tuning</td>
-    <td>original features + 5 engineered features</td>
-   <td>0.40614</td>
+   <td>4</td>
+    <td>Resnet50 with fine tuning of all layers </td>
+    <td>1 million images </td>
+   <td>5070 of class level 3</td>
+   <td>54.90 %</td>
   </tr>
  <tr>
-    <td>Logistic regression with hyper-parameter tuning</td>
-    <td>original features + 5 engineered features + GBDT features</td>
-   <td>0.39660</td>
+  <td>5</td>
+    <td>VGG-16 with fine tuning of last layers </td>
+    <td>on 178k images with image augmentations</td>
+  <td>178 of class level 2</td>
+   <td>25.66 %</td>
   </tr>
   <tr>
-    <td>XG_Boost with hyper-parameter tuning of 2 parameters</td>
-    <td>original features + 5 engineered features + GBDT features</td>
-   <td>0.39366</td>
+   <td>6</td>
+    <td>VGG-16 with fine tuning of all layers </td>
+    <td>on 178k images with image augmentations</td>
+   <td>178 of class level 2</td>
+   <td>49.281 %</td>
   </tr>
  <tr>
-    <td>XG_Boost with hyper-parameter tuning of 4 parameters</td>
-    <td>original features + 5 engineered features + GBDT features</td>
-   <td>0.39065</td>
+   <td>7</td>
+    <td>VGG-19 with fine tuning of all layers </td>
+     <td>on 178k images with image augmentations</td>
+   <td>178 of class level 2</td>
+   <td>50.214 %</td>
+  </tr>
+ <tr>
+   <td>7</td>
+    <td>Resnet-50 with fine tuning of all layers </td>
+     <td>on 178k images with image augmentations</td>
+   <td>178 of class level 2</td>
+   <td>49.674 %</td>
+  </tr>
+ <tr>
+   <td>7</td>
+    <td>Inceptionet-V3 with fine tuning of all layers </td>
+     <td>on 178k images with image augmentations</td>
+   <td>178 of class level 2</td>
+   <td>58.313 %</td>
   </tr>
     
