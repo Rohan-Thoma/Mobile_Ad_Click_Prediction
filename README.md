@@ -157,73 +157,45 @@ The data is given in the form of a CSV file
 ### Scores from the various machine learning models are given below:
 <table style="width:100%">
   <tr>
-    <th>S.No</th>
     <th>Model</th>
-    <th>Type of data</th>
-   <th>Number of classes</th>
-   <th>Test Accuracy</th>
+    <th>Features</th>
+   <th>Test Log-loss</th>
   </tr>
   <tr>
-   <td>1</td>
-    <td>Baseline model</td>
-    <td>on 1 million images </td>
-   <td>5070 of class level 3</td>
-   <td>44.82 %</td>
+    <td>Random model</td>
+    <td>original features + 5 engineered features</td>
+   <td>0.88575</td>
     </tr>
   <tr>
-   <td>2</td>
-   <td>Baseline model with class weights</td>
-   <td>on 1 million images </td>
-   <td>5070 of class level 3</td>
-    <td>0 %</td>
+    <td>Logistic regression with hyper-parameter tuning</td>
+    <td>original features + 5 engineered features</td>
+   <td>0.40037</td>
   </tr>
   <tr>
-   <td>3</td>
-    <td>Resnet50 with fine tuning of last layers</td>
-    <td>on 1 million images</td>
-   <td>5070 of class level 3</td>
-   <td>26.02 %</td>
+    <td>XG_Boost with hyper-parameter tuning</td>
+    <td>original features + 5 engineered features</td>
+   <td>0.39457</td>
   </tr>
   <tr>
-   <td>4</td>
-    <td>Resnet50 with fine tuning of all layers </td>
-    <td>1 million images </td>
-   <td>5070 of class level 3</td>
-   <td>54.90 %</td>
+    <td>Field Oriented Factorization Machines with hyper-parameter tuning</td>
+    <td>original features + 5 engineered features</td>
+   <td>0.40614</td>
   </tr>
  <tr>
-  <td>5</td>
-    <td>VGG-16 with fine tuning of last layers </td>
-    <td>on 178k images with image augmentations</td>
-  <td>178 of class level 2</td>
-   <td>25.66 %</td>
+    <td>Logistic regression with hyper-parameter tuning</td>
+    <td>original features + 5 engineered features + GBDT features</td>
+   <td>0.39660</td>
   </tr>
   <tr>
-   <td>6</td>
-    <td>VGG-16 with fine tuning of all layers </td>
-    <td>on 178k images with image augmentations</td>
-   <td>178 of class level 2</td>
-   <td>49.281 %</td>
+    <td>XG_Boost with hyper-parameter tuning of 2 parameters</td>
+    <td>original features + 5 engineered features + GBDT features</td>
+   <td>0.39366</td>
   </tr>
  <tr>
-   <td>7</td>
-    <td>VGG-19 with fine tuning of all layers </td>
-     <td>on 178k images with image augmentations</td>
-   <td>178 of class level 2</td>
-   <td>50.214 %</td>
+    <td>XG_Boost with hyper-parameter tuning of 4 parameters</td>
+    <td>original features + 5 engineered features + GBDT features</td>
+   <td>0.39065</td>
   </tr>
- <tr>
-   <td>7</td>
-    <td>Resnet-50 with fine tuning of all layers </td>
-     <td>on 178k images with image augmentations</td>
-   <td>178 of class level 2</td>
-   <td>49.674 %</td>
-  </tr>
- <tr>
-   <td>7</td>
-    <td>Inceptionet-V3 with fine tuning of all layers </td>
-     <td>on 178k images with image augmentations</td>
-   <td>178 of class level 2</td>
-   <td>58.313 %</td>
-  </tr>
+
+
     
