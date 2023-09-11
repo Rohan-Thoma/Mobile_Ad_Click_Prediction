@@ -1,18 +1,18 @@
 # Mobile Ad Click Prediction
 Predicting whether a mobile ad will be clicked or not in the age of information overflow, fast changing trends and short spanned attention.
 
-## Detailed Blog explaining the whole case study is here:
+## ⭐Detailed Blog explaining the whole case study is here:
 * part-1: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-1-3971c60da991
 * part-2: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-2-325307d2e65a
 
-## What are mobile ads and why we need to care about them ?
+## 📲What are mobile ads and why we need to care about them ?
 A mobile ad is a type of ad that can appear on web pages and apps that are viewed on a mobile device like a cell phone or tablet. For Google Ads, “mobile ad” is defined as where the ad can appear on “mobile” devices. These include high-end mobile devices with smaller screens, such as smartphones. A decade ago, when smartphones were almost a cutting-edge idea, nobody would have expected that in just a few years, these devices will become indispensable to us. Almost half of the online traffic comes from mobile devices. The mobile digital advertising set to grow from $162.6 in 2018 to $384.9 billion, worldwide, by 2023 according to eMarketer research. 
 > <b><i>So, we can say that mobile is the future of digital advertising. Therefore, any marketing or advertising campaign should also focus on them. </i></b>
 
-## Business Objectives and constraints
+## 🤖Business Objectives and constraints
 <b> Objective </b> :  Predict the pClick (probability of click) for a given ad as accurately as possible. <br>
 
-<b> What is CTR (Click Through Rate) ? </b>
+<b> 👆🏻What is CTR (Click Through Rate) ? </b>
   * Clickthrough rate (CTR) is a ratio showing how often people who see your ad end up clicking it. Clickthrough rate (CTR) can be used to gauge how well your keywords and ads are performing. CTR is the number of clicks that your ad receives divided by the
 number of times your ad is shown: clicks ÷ impressions = CTR. For example, if you had 5 clicks and 100 impressions, then your CTR would be 5%. A high CTR is a good indication that users find your ads helpful and relevant.
 
@@ -21,11 +21,11 @@ number of times your ad is shown: clicks ÷ impressions = CTR. For example, if y
 * Optimization of the expected gain for real-time bidding.<br>
 * Variance reduction for A/B testing: when comparing two publishing policies, using powerful predictive models allows to get rid of the context as much as possible, resulting in higher test significance.<br>
 
-<b>Constraints :</b> Low latency, Interpretability.<br>
+<b>⛓️Constraints :</b> Low latency, Interpretability.<br>
 * We only have seconds to grab a viewer’s attention and on mobile devices people tend to browse quickly, and skip things of no interest. So it is very important that we need to get the ads that are having highest probabililty of clicking and then display them in the ranking order in the actual bussiness application. So latency is extremely important.
 * We need to understand what kind of features make an ad more clickable so that we can get a better insight about how to maximize the ad revenue which needs the model to be interpretable as well.
 
-## Data Overview 
+## 📅Data Overview 
 * Source of the data : https://www.kaggle.com/c/avazu-ctr-prediction/overview/description  <br>
 
 The problem we are working on is from the Kaggle competition which was conducted by Avazu which is a leading multi-national corporation in the digital advertising space. We have been provided with 10 days’ worth of Avazu data to build and test prediction models. Here all the given features are categorical in nature and they are anonymized by hashing to protect the privacy of the users.
@@ -122,15 +122,15 @@ The data is given in the form of a CSV file
 ### Type of machine learning problem <br>
 * It is a <b> binary classification </b> problem where given an Ad and its related information, we need to predict whether it would be clicked or not, for that we will predict the probability of click and set a suitable threshold which works best with our data and then if the probability is above the threshold, then we will predict that it would be clicked or vice versa.
 
-### Performance metric
+### 📈Performance metric
 * <b><i>Binary Log-loss</i></b> : The metric to measure the performance of the model is chosen to be log-loss because it penalizes the model for every wrong prediction and also it uses the probability values directly to estimate the value.
 * <b><i>Confusion matrix along with precision and recall matrices </i></b>:  With the help of these matrics, we get an idea of how the model is performing for classes 1 and 0 since the ad click prediction data is always an imbalanced data.
 
-### Machine Learning Objectives and constraints
+### 🤖Machine Learning Objectives and constraints
  * <b><i>Objective</i></b> : Reduce the log-loss as low as possible 
  * <b><i>Constraints</i></b> : As low latency is the main priority , the models should be chosen in such a manner that they are light weight and also powerful so that they are fast during the deployment and give accurate results.
 
-## Notebooks Overview
+## 📒Notebooks Overview
 ### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> Mobile_Ad_Pred_EDA.ipynb </a> :
 * This notebook contains the exploratory data analysis of the given data and detailed insights about the given features is being described in the notebook.
 * The features given are all categorical in nature and the ditruibution of the numbers among the features are highly skewed which means that some feature values are very large in number and some feature values are very few in number.
@@ -154,7 +154,7 @@ The data is given in the form of a CSV file
 * If we could train the model on whole 50 million data points , then the score would be much better but keeping in mind the real world application of the solution , the reduction in log-loss would contribute very little value in the business standpoint as we have not been able to see any considerable improvements in the values of the confusion matrix.
 * So we can conclude that by engineering 6 different types of new features , we are able to get one of the least log-losses 0.39065 on the test data even though we are not able to get significant improvement in the confusion matrix values.
  
-### Scores from the various machine learning models are given below:
+### ✅Scores from the various machine learning models are given below:
 <table style="width:100%">
   <tr>
     <th>Model</th>
